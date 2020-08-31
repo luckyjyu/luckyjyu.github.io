@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-18T08:01:09.708Z</updated>
+  <updated>2020-08-31T13:05:18.187Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,100 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>位运算相关题型</title>
+    <link href="http://yoursite.com/2020/08/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9B%B8%E5%85%B3%E9%A2%98%E5%9E%8B/"/>
+    <id>http://yoursite.com/2020/08/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9B%B8%E5%85%B3%E9%A2%98%E5%9E%8B/</id>
+    <published>2020-08-31T11:54:39.850Z</published>
+    <updated>2020-08-31T13:05:18.187Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="位运算相关题型"><a href="#位运算相关题型" class="headerlink" title="位运算相关题型"></a>位运算相关题型</h1><h3 id="1、除了一个数字出现一次，其他都出现了两次，让我们找到出现一次的数。"><a href="#1、除了一个数字出现一次，其他都出现了两次，让我们找到出现一次的数。" class="headerlink" title="1、除了一个数字出现一次，其他都出现了两次，让我们找到出现一次的数。"></a>1、除了一个数字出现一次，其他都出现了两次，让我们找到出现一次的数。</h3><p> 异或运算</p><p>规则：</p><table><thead><tr><th align="center">1^1</th><th align="center">0</th></tr></thead><tbody><tr><td align="center">1^0</td><td align="center">1</td></tr><tr><td align="center">0^1</td><td align="center">1</td></tr><tr><td align="center">0^0</td><td align="center">0</td></tr></tbody></table><p>所以规律就是，相同的异或为0，不同的异或为1</p><p>所以相同的数字异或即按位异或(符合交换律和结合律），相同数字每位二进制数都相同，故相同数字异或为0；数字和0异或得到的就是本身，例如（4=100，100^000=100）</p><p>所以一个数组中每两个数字相同，则这两个数字异或就为1，最后把数组中所有的数字进行异或以后，结果就是单独的数字（例如：1,1,2,3,2—&gt;(01^01)^(10^10)^(11)=0^0^(11)=11b=3</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int singleNumber(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int result&#x3D;0;</span><br><span class="line">        for(int i&#x3D;0;i&lt;nums.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            result&#x3D;result^nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div><h3 id="2、除了一个数字出现一次，其他都出现了三次，让我们找到出现一次的数。"><a href="#2、除了一个数字出现一次，其他都出现了三次，让我们找到出现一次的数。" class="headerlink" title="2、除了一个数字出现一次，其他都出现了三次，让我们找到出现一次的数。"></a>2、除了一个数字出现一次，其他都出现了三次，让我们找到出现一次的数。</h3><p>先将每个数字转换为二进制，可以发现，在每一位二进制中，把每个数字的对应位相加，由于，重复的数字3个3个出现，最后这些数字的和一定是3的倍数，故将对应位的和mod3，最后的余数就是目标对应位的bit值，int类型一共是32位，最后得出的32位的二进制就是所求。</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">int singleNumber(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int result&#x3D;0;</span><br><span class="line">        for(int i&#x3D;0;i&lt;&#x3D;31;i++)&#x2F;&#x2F;取出每一位，int类型是32位</span><br><span class="line">        &#123;</span><br><span class="line">            int count&#x3D;0;&#x2F;&#x2F;记录对应bit位的和</span><br><span class="line">            int flag&#x3D;1&lt;&lt;i;</span><br><span class="line">            for(int j&#x3D;0;j&lt;nums.size();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(nums[j]&amp;flag)</span><br><span class="line">                &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(count%3!&#x3D;0)</span><br><span class="line">            &#123;</span><br><span class="line">                result&#x3D;result|flag;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div><h3 id="3、除了两个数字出现一次，其他都出现了两次，让我们找到这个两个数。"><a href="#3、除了两个数字出现一次，其他都出现了两次，让我们找到这个两个数。" class="headerlink" title="3、除了两个数字出现一次，其他都出现了两次，让我们找到这个两个数。"></a>3、除了两个数字出现一次，其他都出现了两次，让我们找到这个两个数。</h3><p>可以依照第一题的方式，想办法将两个不同的数转化到两组，之后两组异或的结果即为所求，如何保证两个不同的数字分别在两个不同的组呢？首先肯定的一点就是，不同的数字安慰异或时，总有某位是不为0的，如果都是0则这两个数相同，所以可以根据将所有数字进行异或后，找到第一位不是0的数字进行分类，把该位是0的分到一类，把该位是1的分到一类，这样就可以保证两个数字不在同一组。</p><p>例如：</p><p>nums=[2,2,3,3,4,5]</p><p>2^2^3^3^4^5=001b,第一位不为0的就是第0位</p><table><thead><tr><th align="center">2</th><th align="center">010</th><th align="center">第一组</th></tr></thead><tbody><tr><td align="center">2</td><td align="center">010</td><td align="center">第一组</td></tr><tr><td align="center">3</td><td align="center">011</td><td align="center">第二组</td></tr><tr><td align="center">3</td><td align="center">011</td><td align="center">第二组</td></tr><tr><td align="center">4</td><td align="center">100</td><td align="center">第一组</td></tr><tr><td align="center">5</td><td align="center">101</td><td align="center">第二组</td></tr></tbody></table><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; singleNumber(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        &#x2F;&#x2F;找到第一个不为0的bit位</span><br><span class="line">        &#x2F;&#x2F;求出异或结果</span><br><span class="line">        int result&#x3D;0;</span><br><span class="line">        for(int i&#x3D;0;i&lt;nums.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            result&#x3D;result^nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        int flag&#x3D;1;</span><br><span class="line">        for(int i&#x3D;0;i&lt;&#x3D;31;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;对result的每一位进行与运算，取出该位</span><br><span class="line">            flag&#x3D;1&lt;&lt;i;</span><br><span class="line">            if((result&amp;flag)!&#x3D;0)&#x2F;&#x2F;第一位不为0的下标是i</span><br><span class="line">            &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;进行分组，a，b两组</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        res.push_back(0);</span><br><span class="line">        res.push_back(0);</span><br><span class="line">        for(int i&#x3D;0;i&lt;nums.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if((nums[i]&amp;flag)&#x3D;&#x3D;flag)</span><br><span class="line">            &#123;</span><br><span class="line">                res[0]&#x3D;res[0]^nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                res[1]&#x3D;res[1]^nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;位运算相关题型&quot;&gt;&lt;a href=&quot;#位运算相关题型&quot; class=&quot;headerlink&quot; title=&quot;位运算相关题型&quot;&gt;&lt;/a&gt;位运算相关题型&lt;/h1&gt;&lt;h3 id=&quot;1、除了一个数字出现一次，其他都出现了两次，让我们找到出现一次的数。&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>阅读笔记</title>
+    <link href="http://yoursite.com/2020/08/14/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/08/14/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-08-14T11:11:53.423Z</published>
+    <updated>2020-08-14T15:03:03.525Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Deep-Video-Super-Resolution-Network-Using-Dynamic-Upsampling-Filters-Without-Explicit-Motion-Compensation"><a href="#Deep-Video-Super-Resolution-Network-Using-Dynamic-Upsampling-Filters-Without-Explicit-Motion-Compensation" class="headerlink" title="Deep Video Super-Resolution Network Using Dynamic Upsampling Filters Without Explicit Motion Compensation"></a>Deep Video Super-Resolution Network Using Dynamic Upsampling Filters Without Explicit Motion Compensation</h1><p>算法改进的提出</p><p>基于深度学习的单图像超分辨率（SISR）方法在峰值信噪比（PSNR）和结构相似性指数（SSIM）上展示了state-of-art的性能。</p><p>执行VSR的一种简单方法是逐帧运行SISR。然而，由于SISR方法没有考虑帧之间的时间关系，因此很可能连续帧没有自然连接，从而导致闪烁伪影。</p><p>传统的VSR（或多图像超分辨率）算法通过考虑相邻LR帧之间的亚像素运动，将多个LR帧作为输入和输出HR帧。所有基于深度学习的VSR方法都遵循相似的步骤，由两个步骤组成：运动估计和补偿过程，然后是上采样过程。这种两步法的一个问题是，结果严重依赖于精确的运动估计。这种方法的另一个潜在问题是，HR输出帧是通过卷积神经网络（CNN）将多个运动补偿输入LR帧的值混合而产生的，这可能导致HR帧的输出模糊。</p><p>本文提出了一种新的端到端深度神经网络，它与以往的方法有着根本的不同。而不是显式地计算和补偿输入帧之间的运动，而是隐式地利用运动信息生成动态上采样滤波器。利用生成的上采样滤波器，HR帧直接通过对输入中心帧的局部滤波来构造。由于我们不依赖于运动的显式计算，也不直接合并来自多个帧的值，所以我们可以生成更清晰和时间一致的HR视频。通过大量的训练视频和新的数据扩充过程，我们实现了与以前基于深度学习的VSR算法相比的最新性能。图1示出了一个例子，其中与最先进的方法之一VSRnet[16]相比，我们的方法产生的帧更清晰，闪烁更少。</p><p>基于非深度学习的传统VSR方法通过将HR帧之间的运动、模糊过程和子采样放在一个框架中来模拟VSR问题，并重点使用优化方法解决尖锐帧。</p><p>以往基于CNN的端到端VSR方法主要集中在显式运动估计和补偿上，以更好地重建HR帧。与以往的工作不同，我们没有明确的运动估计和补偿步骤。利用自适应上采样和动态滤波器依赖于输入帧，我们获得了一个超越现有工作的VSR性能。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Deep-Video-Super-Resolution-Network-Using-Dynamic-Upsampling-Filters-Without-Explicit-Motion-Compensation&quot;&gt;&lt;a href=&quot;#Deep-Video-Supe
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构和算法</title>
+    <link href="http://yoursite.com/2020/07/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/07/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/</id>
+    <published>2020-07-11T13:47:42.095Z</published>
+    <updated>2020-07-11T14:24:16.605Z</updated>
+    
+    <content type="html"><![CDATA[<p>什么是数据结构？</p><p>在计算机中存储和组织数据的方式</p><p>什么是算法？（解决问题的办法）</p><p>1、一个有限指令集，每条指令的描述不依赖于语言</p><p>2、接受一些输入（有些情况不需要输入）</p><p>3、产生输出</p><p>4、在有限步后终止</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;什么是数据结构？&lt;/p&gt;
+&lt;p&gt;在计算机中存储和组织数据的方式&lt;/p&gt;
+&lt;p&gt;什么是算法？（解决问题的办法）&lt;/p&gt;
+&lt;p&gt;1、一个有限指令集，每条指令的描述不依赖于语言&lt;/p&gt;
+&lt;p&gt;2、接受一些输入（有些情况不需要输入）&lt;/p&gt;
+&lt;p&gt;3、产生输出&lt;/p&gt;
+&lt;p&gt;4、在
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>论文阅读笔记(一)</title>
+    <link href="http://yoursite.com/2020/07/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(%E4%B8%80)/"/>
+    <id>http://yoursite.com/2020/07/08/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(%E4%B8%80)/</id>
+    <published>2020-07-08T13:29:59.894Z</published>
+    <updated>2020-07-08T16:16:19.149Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="You’ll-Never-Walk-Alone-Modeling-Social-Behavior-for-Multi-target-Tracking"><a href="#You’ll-Never-Walk-Alone-Modeling-Social-Behavior-for-Multi-target-Tracking" class="headerlink" title="You’ll Never Walk Alone: Modeling Social   Behavior for Multi-target Tracking"></a>You’ll Never Walk Alone: Modeling Social   Behavior for Multi-target Tracking</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;You’ll-Never-Walk-Alone-Modeling-Social-Behavior-for-Multi-target-Tracking&quot;&gt;&lt;a href=&quot;#You’ll-Never-Walk-Alone-Modeling-Social-Behavi
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>入门flask框架</title>
