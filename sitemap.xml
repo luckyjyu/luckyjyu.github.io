@@ -2,16 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/11/29/Linux%E5%9F%BA%E7%A1%80/Day2/Day2/</loc>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/Day6/Day6/</loc>
     
-    <lastmod>2020-11-29T04:34:52.000Z</lastmod>
+    <lastmod>2021-01-22T02:25:51.440Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/11/29/Linux%E5%9F%BA%E7%A1%80/Day1/Day1/</loc>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%89-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Day1/Day1/</loc>
     
-    <lastmod>2020-11-29T04:34:44.000Z</lastmod>
+    <lastmod>2021-01-20T07:52:03.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/Day7/Day7/</loc>
+    
+    <lastmod>2021-01-14T07:41:42.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/Day4/Day4/</loc>
+    
+    <lastmod>2021-01-11T07:05:57.714Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/Day2/Day2/</loc>
+    
+    <lastmod>2021-01-05T14:02:28.586Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/Day1/Day1/</loc>
+    
+    <lastmod>2021-01-02T14:28:21.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%80-%E5%9F%BA%E7%A1%80/Day5/Day5/</loc>
+    
+    <lastmod>2020-12-16T03:06:11.243Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%80-%E5%9F%BA%E7%A1%80/Day1/Day1/</loc>
+    
+    <lastmod>2020-12-15T13:04:38.400Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%80-%E5%9F%BA%E7%A1%80/Day4/Day4/</loc>
+    
+    <lastmod>2020-12-12T08:02:10.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%80-%E5%9F%BA%E7%A1%80/Day3/Day3/</loc>
+    
+    <lastmod>2020-12-05T08:47:35.742Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%80-%E5%9F%BA%E7%A1%80/Day2/Day2/</loc>
+    
+    <lastmod>2020-11-29T08:00:27.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/TensorFlow%E5%AE%89%E8%A3%85/tensorflow/</loc>
+    
+    <lastmod>2020-11-10T14:12:32.618Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%85%8D%E5%87%86/3_IR%E4%B8%8ETV%E9%85%8D%E5%87%86/</loc>
+    
+    <lastmod>2020-11-05T13:21:21.555Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%85%8D%E5%87%86/2_%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    
+    <lastmod>2020-10-12T08:59:44.986Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/01/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%85%8D%E5%87%86/1_.dat%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%9B%BE%E5%BD%A2%E8%A3%81%E5%89%AA/</loc>
+    
+    <lastmod>2020-10-12T08:04:50.057Z</lastmod>
     
   </url>
   
@@ -89,13 +180,6 @@
     <loc>http://yoursite.com/2020/09/01/FPGA/verilog%E4%B9%8B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</loc>
     
     <lastmod>2020-09-01T11:03:20.873Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/14/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2020-08-14T15:03:03.525Z</lastmod>
     
   </url>
   
